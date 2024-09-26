@@ -104,10 +104,24 @@
         <div class="col-md-8">
           <div class="header-icons">
             <a href="#cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#account" class="nav-link"><i class="fas fa-user"></i></a>
-            <div class="search-container">
-              <input type="text" class="search" placeholder="Search" id="searchBar">
-              <i class="fas fa-search" id="searchIcon"></i>
+            <a href="./admins/" class="nav-link"><i class="fas fa-user"></i></a>
+          
+              <!-- the serch -->
+              <div class="search-container">
+                <form action="index.php" method="POST">
+                    <input type="text" class="search" placeholder="Search" id="searchBar" name="search">
+                    <input type="submit" name="submit" value="" hidden>
+                </form>
+                <i class="fas fa-search" id="searchIcon"></i>
+            </div>
+            <script>
+            document.getElementById("searchBar").addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    this.form.submit();
+                }
+            });
+            </script>
             </div>
           </div>
         </div>

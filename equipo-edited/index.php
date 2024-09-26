@@ -6,8 +6,17 @@ include 'models/product.php';
 include('partials/menu.php');
 
 if (isset($_POST['search'])) {
-    $look = $_POST['look'];
-    //include the search.php
+    $look = $_POST['search'];
+    echo "searching ";
+    //include the search controller
+    
+    
+
+    include 'controllers/search_controller.php';
+    
+
+
+    
 } elseif (isset($_GET['id']) && isset($_GET['name']) && isset($_GET['old_price']) && isset($_GET['new_price']) && isset($_GET['description']) && isset($_GET['images'])) {
     $product_id = $_GET['id'];
     $product_name = $_GET['name'];
@@ -36,7 +45,7 @@ if (isset($_POST['search'])) {
     include 'views/selected.php';
 } elseif (isset($_GET['product'])) {
     include 'controllers/selected_view_controller.php';
-    echo "viewd upto here ";
+    // echo "viewd upto here ";
 }
 //if not searching and not clicked any product the just display the home normals 
 ?>

@@ -34,7 +34,7 @@
     <div class="product-view">
         <div class="carousel_selected">
         <?php foreach ($images as $index => $image): ?>
-            <div><img src="./assets/img/products/<?= htmlspecialchars($image); ?>" alt="Product Image <?= $index + 1; ?>"></div>
+            <div><img src="./assets/img/products/<?= htmlspecialchars($image); ?>" alt="Product Image <?= $image ,$index + 1; ?>"></div>
         <?php endforeach; ?>
         </div>
         <div class="product-details">

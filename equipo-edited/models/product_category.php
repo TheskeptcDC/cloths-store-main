@@ -27,7 +27,8 @@ class product_category{
     }
 
     //to search for categories
-    function search_category(){
+    function search_category($look){
+        // $sql = "SELECT * FROM product_category WHERE active = 'yes' AND featured = 'yes' ";
         $sql = "SELECT * FROM product_category WHERE active = 'yes' AND category_name LIKE '%$look%' OR category_description LIKE '%$look%'  ";
         return $sql;
     }

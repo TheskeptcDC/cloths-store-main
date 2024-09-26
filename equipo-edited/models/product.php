@@ -127,40 +127,6 @@ function delete($conn, $id) {
     }
 }
 
-    function displayProduct($productArray){
-        
-        if ($productArray) {
-            $count = mysqli_num_rows($productArray);
-            if ($count > 0) {
-                //the category has products
-                //get the products
-                $product_html_array = Array();
-                while ($prod_rows = mysqli_fetch_assoc($productArray)) {
-                    $prod_name = $prod_rows['product_name'];
-                    $prod_desc = $prod_rows['product_description'];
-                    $prod_img = $prod_rows['product_image'];
-                    $prod_id = $prod_rows['product_id'];
-                    $old_price = $prod_rows['old_price'];
-                    $new_price = $prod_rows['new_price'];
-                    $dicount = (($old_price - $new_price)/$new_price)*100;
-                }
-                $product_html_array[] = $prod_name;
-                $product_html_array[] = $prod_desc;
-                $product_html_array[] = $prod_img;
-                $product_html_array[] = $prod_id;
-                $product_html_array[] = $old_price;
-                $product_html_array[] = $new_price;
-                $product_html_array[] = $dicount;
-                return $product_html_array;
-    }else {
-    return $count;
-}
-        
-    }else {
-        //return false then an error occured in the query or something 
-        return false;
-    }
-}
 
 //to return the number of products in a aprticular category.. by giving the mysql res 
 function productCount($productArray){
